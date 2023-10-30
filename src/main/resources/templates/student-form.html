@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Student Form</title>
+
+    <style>
+        .error {color:red}
+    </style>
+</head>
+<body>
+
+<h3>Enter more information about the student</h3>
+<i>Fields with (*) are required</i>
+<br><br>
+
+<form th:action="@{/processStudentForm}" th:object="${student}" method="POST">
+
+    Student first name: <input type="text" th:field="*{firstName}" placeholder="*{firstName}"/>
+    <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" class="error"/>
+    <br><br>
+
+    Student last name: <input type="text" th:field="*{lastName}" placeholder="*{lastName}"/>
+    <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="error"/>
+    <br><br>
+
+    Select student grade (*):
+    <br><br>
+    <input type="radio" th:field="*{grade}" th:each="studentGrade : ${studentGrades}" th:value="${studentGrade}" th:text="${studentGrade}"/>
+    <span th:if="${#fields.hasErrors('grade')}" th:errors="*{grade}" class="error"/>
+    <br><br>
+
+    GPA:
+    <input type="text" th:field="*{gpa}" placeholder="0.00"/>
+    <span th:if="${#fields.hasErrors('gpa')}" th:errors="*{gpa}" class="error"/>
+    <br><br>
+
+    Financial aid: <input type="checkbox" th:field="*{hasFinancialAid}" th:value="true"/>
+    <br><br>
+
+    <input type="submit"/>
+
+</form>
+
+</body>
+</html>

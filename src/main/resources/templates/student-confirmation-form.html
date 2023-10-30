@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Confirmation Form</title>
+</head>
+<body>
+
+<h3>Student Confirmation Form</h3>
+
+First name: <span th:text="${student.firstName}"/>
+<br><br>
+
+Last name: <span th:text="${student.lastName}"/>
+<br><br>
+
+Grade: <span th:text="${student.grade}"/>
+<br><br>
+
+GPA: <span th:text="${student.gpa}"/>
+<br><br>
+
+Financial Aid: <span th:if="${student.hasFinancialAid}" th:text="Yes"/><span th:unless="${student.hasFinancialAid}" th:text="No"/>
+
+</body>
+</html>
