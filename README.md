@@ -1,4 +1,5 @@
 # sprint-boot-student-and-faculty-practice-project
+### Last updated: 10/23
 - Implemented with spring MVC
 - Uses thymeleaf template and controller to transport data
 - Uses spring validation to check field validity
@@ -8,4 +9,4 @@
 - Inputs basic information based on given type (Ex: first name, last name, profession, grade level, etc)
 - Display information inputted by user
 
-### Last updated: 10/23
+
